@@ -18,15 +18,13 @@ class Program
         Enemy enemy = new Enemy();
         enemy.x = 4;
         enemy.y = 4;
-        
+        dungeon.SetData(player);
+        dungeon.SetData(enemy);
         while (true)
         {
-            dungeon.SetData(player);
-            dungeon.SetData(enemy);
-
+            
             dungeon.DrawField();
-
-            dungeon.RemoveData(player);
+            
             string str = Console.ReadLine();
             if (str == "q")
             {
@@ -34,11 +32,12 @@ class Program
             }
             else
             {
-                player.Move(str, dungeon);
+                //dungeon.RemoveData(player);
+                //dungeon.RemoveData(enemy);
+                player.logic.Move(player, str, dungeon);
+                
+                enemy.logic.Move(enemy, str, dungeon);
             }
-
-            
-
         }
         
     }

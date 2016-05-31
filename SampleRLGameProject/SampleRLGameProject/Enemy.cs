@@ -12,9 +12,9 @@ public class Enemy : Character
         name = GetName();
     }
     
-    public override int Get(int MAXX, int MAXY)
+    public override int Get()
     {
-        return y * MAXY + x;
+        return y * Dungeon.MAXY + x;
     }
 
     public override string GetName()

@@ -6,12 +6,8 @@ using System.Threading.Tasks;
 
 public class Character : ObjectBase
 {
+    public Logic logic = new Logic();
     public Character()
-    {
-
-    }
-    
-    public virtual void Move(string str, Dungeon dungeon)
     {
 
     }

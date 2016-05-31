@@ -18,7 +18,7 @@ public class ObjectBase
 
     }
 
-    public virtual int Get(int MAXX, int MAXY)
+    public virtual int Get()
     {
         return 0;
     }

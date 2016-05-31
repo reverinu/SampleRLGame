@@ -16,16 +16,11 @@ public class Dungeon
     public Dungeon()
     {
         data = new ObjectBase[MAXX * MAXY];
-        /*for (int i = 0; i < MAXX * MAXY; i++)
-        {
-            data[i] = new ObjectBase();
-        }*/
-
     }
 
     public void SetData(ObjectBase obj)
     {
-        data[obj.Get(MAXX, MAXY)] = obj;
+        data[obj.Get()] = obj;
     }
 
     public ObjectBase GetData(int pos)
@@ -35,7 +30,7 @@ public class Dungeon
 
     public void RemoveData(ObjectBase obj)
     {
-        data[obj.Get(MAXX, MAXY)] = null;
+        data[obj.Get()] = null;
     }
 
 

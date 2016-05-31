@@ -1,0 +1,6 @@
+c:\users\健司\documents\visual studio 2015\Projects\SampleRLGameProject\SampleRLGameProject\bin\Debug\SampleRLGameProject.exe.config
+C:\Users\健司\Documents\Visual Studio 2015\Projects\SampleRLGameProject\SampleRLGameProject\bin\Debug\SampleRLGameProject.exe
+C:\Users\健司\Documents\Visual Studio 2015\Projects\SampleRLGameProject\SampleRLGameProject\bin\Debug\SampleRLGameProject.pdb
+C:\Users\健司\Documents\Visual Studio 2015\Projects\SampleRLGameProject\SampleRLGameProject\obj\Debug\SampleRLGameProject.csprojResolveAssemblyReference.cache
+C:\Users\健司\Documents\Visual Studio 2015\Projects\SampleRLGameProject\SampleRLGameProject\obj\Debug\SampleRLGameProject.exe
+C:\Users\健司\Documents\Visual Studio 2015\Projects\SampleRLGameProject\SampleRLGameProject\obj\Debug\SampleRLGameProject.pdb

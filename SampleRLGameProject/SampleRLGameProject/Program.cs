@@ -40,16 +40,18 @@ class Program
                     player.Move(player.GetDirection(str));
                     dungeon.SetData(player);
                 }
-                if (dungeon.IsVacancyInFront(enemy1.GetDirection(), enemy1.x, enemy1.y))
+                Character.Direction dir = enemy1.GetDirection();// Smartじゃない
+                if (dungeon.IsVacancyInFront(dir, enemy1.x, enemy1.y))
                 {
                     dungeon.RemoveData(enemy1);
-                    enemy1.Move(enemy1.GetDirection());
+                    enemy1.Move(dir);
                     dungeon.SetData(enemy1);
                 }
-                if (dungeon.IsVacancyInFront(enemy2.GetDirection(), enemy2.x, enemy2.y))
+                dir = enemy2.GetDirection();// Smartじゃない
+                if (dungeon.IsVacancyInFront(dir, enemy2.x, enemy2.y))
                 {
                     dungeon.RemoveData(enemy2);
-                    enemy2.Move(enemy2.GetDirection());
+                    enemy2.Move(dir);
                     dungeon.SetData(enemy2);
                 }
             }

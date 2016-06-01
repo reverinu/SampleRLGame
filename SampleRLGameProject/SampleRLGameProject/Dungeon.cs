@@ -39,32 +39,20 @@ public class Dungeon
         {
             case Character.Direction.Up:
                 --y;
-                if (y < 0)
-                {
-                    return false;
-                }
                 break;
             case Character.Direction.Down:
                 ++y;
-                if (y > MAXY - 1)
-                {
-                    return false;
-                }
                 break;
             case Character.Direction.Left:
                 --x;
-                if (x < 0)
-                {
-                    return false;
-                }
                 break;
             case Character.Direction.Right:
                 ++x;
-                if (x > MAXX - 1)
-                {
-                    return false;
-                }
                 break;
+        }
+        if (y < 0 || y > MAXY - 1 || x < 0 || x > MAXX - 1)
+        {
+            return false;
         }
         if (data[y * MAXY + x] != null)
         {
@@ -73,6 +61,12 @@ public class Dungeon
                 return false;
             }
         }
+        return true;
+    }
+
+    public bool IsVacancy()
+    {
+
         return true;
     }
 

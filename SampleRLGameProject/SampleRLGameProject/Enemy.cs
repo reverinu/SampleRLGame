@@ -25,8 +25,11 @@ public class Enemy : Character
     public  Direction GetDirection()
     {
         Direction direction = Direction.None;
-        Random rnd = new Random();
-        switch (rnd.Next(0, 4))
+        //Random rnd = new Random();
+
+        RandomNum rnd = RandomNum.GetInstanse();
+        int r = rnd.GetRandomNum();
+        switch (r)
         {
             case 0:
                 direction = Direction.Up;
@@ -35,10 +38,10 @@ public class Enemy : Character
                 direction = Direction.Down;
                 break;
             case 2:
-                direction = Direction.Left;
+                direction = Direction.Right;
                 break;
             case 3:
-                direction = Direction.Right;
+                direction = Direction.Left;
                 break;
         }
 

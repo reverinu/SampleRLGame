@@ -21,4 +21,27 @@ public class Enemy : Character
     {
         return "enemy";
     }
+
+    public  Direction GetDirection()
+    {
+        Direction direction = Direction.None;
+        Random rnd = new Random();
+        switch (rnd.Next(0, 4))
+        {
+            case 0:
+                direction = Direction.Up;
+                break;
+            case 1:
+                direction = Direction.Down;
+                break;
+            case 2:
+                direction = Direction.Left;
+                break;
+            case 3:
+                direction = Direction.Right;
+                break;
+        }
+
+        return direction;
+    }
 }

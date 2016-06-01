@@ -6,9 +6,35 @@ using System.Threading.Tasks;
 
 public class Character : ObjectBase
 {
-    public Logic logic = new Logic();
     public Character()
     {
 
+    }
+    public enum Direction : int
+    {
+        Up,
+        Down,
+        Right,
+        Left,
+        None,
+    }
+
+    public void Move(Direction direction)
+    {
+        switch (direction)
+        {
+            case Direction.Up:
+                y--;
+                break;
+            case Direction.Down:
+                y++;
+                break;
+            case Direction.Left:
+                x--;
+                break;
+            case Direction.Right:
+                x++;
+                break;
+        }
     }
 }

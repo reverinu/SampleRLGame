@@ -33,12 +33,55 @@ public class Dungeon
         data[obj.Get()] = null;
     }
 
+    public bool IsVacancyInFront(Character.Direction direction, int x, int y)
+    {
+        switch (direction)
+        {
+            case Character.Direction.Up:
+                --y;
+                if (y < 0)
+                {
+                    return false;
+                }
+                break;
+            case Character.Direction.Down:
+                ++y;
+                if (y > MAXY - 1)
+                {
+                    return false;
+                }
+                break;
+            case Character.Direction.Left:
+                --x;
+                if (x < 0)
+                {
+                    return false;
+                }
+                break;
+            case Character.Direction.Right:
+                ++x;
+                if (x > MAXX - 1)
+                {
+                    return false;
+                }
+                break;
+        }
+        if (data[y * MAXY + x] != null)
+        {
+            if (data[y * MAXY + x].GetName() == "player" || data[y * MAXY + x].GetName() == "enemy")
+            {
+                return false;
+            }
+        }
+        return true;
+    }
+
 
     public void DrawField()
     {
-        for (int y = 0; y < MAXY; y++)
+        for (int y = 0; y < MAXY; ++y)
         {
-            for (int x = 0; x < MAXX; x++)
+            for (int x = 0; x < MAXX; ++x)
             {
                 if (data[y * MAXY + x] == null)
                 {

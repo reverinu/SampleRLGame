@@ -14,15 +14,17 @@ class Program
         Player player = new Player();
         player.x = 0;
         player.y = 0;
-
-        Enemy enemy = new Enemy();
-        enemy.x = 4;
-        enemy.y = 4;
+        Enemy enemy1 = new Enemy();
+        enemy1.x = 4;
+        enemy1.y = 4;
+        Enemy enemy2 = new Enemy();
+        enemy2.x = 3;
+        enemy2.y = 3;
         dungeon.SetData(player);
-        dungeon.SetData(enemy);
+        dungeon.SetData(enemy1);
+        dungeon.SetData(enemy2);
         while (true)
         {
-            
             dungeon.DrawField();
             
             string str = Console.ReadLine();
@@ -32,13 +34,25 @@ class Program
             }
             else
             {
-                //dungeon.RemoveData(player);
-                //dungeon.RemoveData(enemy);
-                player.logic.Move(player, str, dungeon);
-                
-                enemy.logic.Move(enemy, str, dungeon);
+                if (dungeon.IsVacancyInFront(player.GetDirection(str), player.x, player.y))
+                {
+                    dungeon.RemoveData(player);
+                    player.Move(player.GetDirection(str));
+                    dungeon.SetData(player);
+                }
+                if (dungeon.IsVacancyInFront(enemy1.GetDirection(), enemy1.x, enemy1.y))
+                {
+                    dungeon.RemoveData(enemy1);
+                    enemy1.Move(enemy1.GetDirection());
+                    dungeon.SetData(enemy1);
+                }
+                if (dungeon.IsVacancyInFront(enemy2.GetDirection(), enemy2.x, enemy2.y))
+                {
+                    dungeon.RemoveData(enemy2);
+                    enemy2.Move(enemy2.GetDirection());
+                    dungeon.SetData(enemy2);
+                }
             }
         }
-        
     }
 }

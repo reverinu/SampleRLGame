@@ -18,7 +18,7 @@ public class RandomNum
     {
         return randomNum;
     }
-
+    // 値を指定できるようにするべき
     public int GetRandomNum()
     {
         return rnd.Next(0, 4);

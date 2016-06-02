@@ -6,14 +6,10 @@ using System.Threading.Tasks;
 
 public class Dungeon
 {
-    //public static readonly int MAXX = 5;
-    //public static readonly int MAXY = 5;
     private int MAXX = 0;
     private int MAXY = 0;
     ObjectBase[] data;
     
-
-
     // コンストラクタ
     public Dungeon(int x, int y)
     {
@@ -58,40 +54,29 @@ public class Dungeon
         {
             return false;
         }
-        if (data[y * MAXY + x] != null)
-        {
-            if (data[y * MAXY + x].GetName() == "player" || data[y * MAXY + x].GetName() == "enemy")
-            {
-                return false;
-            }
-        }
         return true;
     }
-
-    public bool IsVacancy()
-    {
-
-        return true;
-    }
-
-
     public void DrawField()
     {
         for (int y = 0; y < MAXY; ++y)
         {
             for (int x = 0; x < MAXX; ++x)
             {
-                if (data[y * MAXY + x] == null)
+                if (data[y * MAXX + x] == null)
                 {
                     Console.Write("□");
                 }
-                else if (data[y * MAXY + x].name == "player")
+                else if (data[y * MAXX + x].name == "player")
                 {
                     Console.Write("●");
                 }
-                else if (data[y * MAXY + x].name == "enemy")
+                else if (data[y * MAXX + x].name == "enemy")
                 {
                     Console.Write("▲");
+                }
+                else if (data[y * MAXX + x].name == "goal")
+                {
+                    Console.Write("■");
                 }
             }
             Console.Write("\n");

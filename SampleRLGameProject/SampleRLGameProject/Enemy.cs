@@ -12,11 +12,6 @@ public class Enemy : Character
         name = GetName();
     }
     
-    public override int Get()
-    {
-        return y * MAXY + x;
-    }
-
     public override string GetName()
     {
         return "enemy";
@@ -25,8 +20,6 @@ public class Enemy : Character
     public  Direction GetDirection()
     {
         Direction direction = Direction.None;
-        //Random rnd = new Random();
-
         RandomNum rnd = RandomNum.GetInstanse();
         int r = rnd.GetRandomNum();
         switch (r)

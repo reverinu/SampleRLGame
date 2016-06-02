@@ -7,15 +7,10 @@ using System.Threading.Tasks;
 
 public class Player : Character
 {
+    public int hp = 30;
     public Player()
     {
         name = GetName();
-    }
-
-    
-    public override int Get()
-    {
-        return y * MAXY + x;
     }
 
     public override string GetName()

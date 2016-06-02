@@ -10,7 +10,6 @@ public class ObjectBase
     
     public ObjectBase()
     {
-
         x = 0;
         y = 0;
         name = GetName();
@@ -21,10 +20,10 @@ public class ObjectBase
         MAXX = x;
         MAXY = y;
     }
-
-    public virtual int Get()
+    
+    public int Get()
     {
-        return 0;
+        return y * MAXX + x;
     }
 
     public virtual string GetName()

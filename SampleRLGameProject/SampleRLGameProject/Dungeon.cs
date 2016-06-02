@@ -6,15 +6,19 @@ using System.Threading.Tasks;
 
 public class Dungeon
 {
-    public static readonly int MAXX = 5;
-    public static readonly int MAXY = 5;
-
+    //public static readonly int MAXX = 5;
+    //public static readonly int MAXY = 5;
+    private int MAXX = 0;
+    private int MAXY = 0;
     ObjectBase[] data;
+    
 
 
     // コンストラクタ
-    public Dungeon()
+    public Dungeon(int x, int y)
     {
+        MAXX = x;
+        MAXY = y;
         data = new ObjectBase[MAXX * MAXY];
     }
 

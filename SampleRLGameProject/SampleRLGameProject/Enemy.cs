@@ -14,7 +14,7 @@ public class Enemy : Character
     
     public override int Get()
     {
-        return y * Dungeon.MAXY + x;
+        return y * MAXY + x;
     }
 
     public override string GetName()

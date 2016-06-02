@@ -5,17 +5,21 @@ public class ObjectBase
     public int x;
     public int y;
     public string name;
+    protected int MAXX;
+    protected int MAXY;
     
     public ObjectBase()
     {
+
         x = 0;
         y = 0;
         name = GetName();
     }
 
-    public virtual void Set(int MAXX, int MAXY)
+    public void Set(int x, int y)
     {
-
+        MAXX = x;
+        MAXY = y;
     }
 
     public virtual int Get()

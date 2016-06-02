@@ -10,16 +10,19 @@ class Program
 {
     static void Main(string[] args)
     {
-        Dungeon dungeon = new Dungeon();
+        Dungeon dungeon = new Dungeon(10, 10);
         Player player = new Player();
+        player.Set(10, 10);
         player.x = 0;
         player.y = 0;
         Enemy enemy1 = new Enemy();
-        enemy1.x = 4;
-        enemy1.y = 4;
+        enemy1.Set(10, 10);
+        enemy1.x = 7;
+        enemy1.y = 7;
         Enemy enemy2 = new Enemy();
-        enemy2.x = 3;
-        enemy2.y = 3;
+        enemy2.Set(10, 10);
+        enemy2.x = 5;
+        enemy2.y = 5;
         dungeon.SetData(player);
         dungeon.SetData(enemy1);
         dungeon.SetData(enemy2);
